@@ -1,5 +1,5 @@
 <template>
-  <header class="fixed top-0 left-0 right-0 p-8 z-10">
+  <header class="absolute top-0 left-0 right-0 p-8 z-10">
     <div class="container mx-auto flex justify-between items-center">
       <!-- Left: Name -->
       <div class="text-primary-100 font-sans text-lg font-semibold">

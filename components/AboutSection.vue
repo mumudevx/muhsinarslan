@@ -8,7 +8,7 @@
                     <h2
                         class="font-serif text-6xl md:text-7xl font-bold mb-4 
                                text-transparent bg-clip-text bg-gradient-to-r from-accent-400 via-accent-500 to-accent-600">
-                        About Me
+                        ABOUT ME
                     </h2>
                     <p class="font-sans text-base md:text-lg text-primary-300 leading-relaxed max-w-xl mx-auto md:mx-0">
                         I am Muhsin. As an indie SaaS developer, I am passionate about transforming innovative
