@@ -2,11 +2,12 @@
   <section class="gallery-section px-4 sm:px-8 md:px-16 lg:px-24 py-16 bg-gradient-to-b from-[#21272f] to-[#33241f] overflow-hidden relative">
     <!-- Added relative positioning for potential absolute elements like overlay -->
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-      <!-- Add refs to columns -->
+      <!-- Add refs to columns - Increased image count -->
       <div ref="col1" class="column flex flex-col space-y-4">
         <img src="https://picsum.photos/seed/col1img1/400/600" alt="Gallery Image 1" class="gallery-image w-full h-auto rounded shadow-lg cursor-pointer">
         <img src="https://picsum.photos/seed/col1img2/400/500" alt="Gallery Image 2" class="gallery-image w-full h-auto rounded shadow-lg cursor-pointer">
         <img src="https://picsum.photos/seed/col1img3/400/700" alt="Gallery Image 3" class="gallery-image w-full h-auto rounded shadow-lg cursor-pointer">
+        <img src="https://picsum.photos/seed/col1img4/400/550" alt="Gallery Image 13" class="gallery-image w-full h-auto rounded shadow-lg cursor-pointer">
       </div>
 
       <div ref="col2" class="column flex flex-col space-y-4">
@@ -19,6 +20,7 @@
         <img src="https://picsum.photos/seed/col3img1/400/500" alt="Gallery Image 7" class="gallery-image w-full h-auto rounded shadow-lg cursor-pointer">
         <img src="https://picsum.photos/seed/col3img2/400/600" alt="Gallery Image 8" class="gallery-image w-full h-auto rounded shadow-lg cursor-pointer">
         <img src="https://picsum.photos/seed/col3img3/400/750" alt="Gallery Image 9" class="gallery-image w-full h-auto rounded shadow-lg cursor-pointer">
+        <img src="https://picsum.photos/seed/col3img4/400/620" alt="Gallery Image 14" class="gallery-image w-full h-auto rounded shadow-lg cursor-pointer">
       </div>
 
       <div ref="col4" class="column hidden lg:flex flex-col space-y-4">
@@ -59,12 +61,17 @@ const verticalLoop = (elements, config) => {
   // Adjust calculation if using space-y or gap
   const totalHeight = elements.reduce((sum, el) => sum + el.offsetHeight + parseFloat(getComputedStyle(el).marginBottom), 0);
   
+  // --- DEBUG LOGGING --- 
+  console.log(`Column: ${elements[0].parentNode.className}, Calculated Total Height: ${totalHeight}`);
+  // --- END DEBUG LOGGING ---
+
   // Clone elements for seamless loop
   elements.forEach(el => {
-    el.parentNode.appendChild(el.cloneNode(true));
+    const clone = el.cloneNode(true);
+    el.parentNode.appendChild(clone);
     // Add click listener to original and cloned images
-    el.parentNode.lastChild.addEventListener('click', () => {
-      zoomedImageUrl.value = el.parentNode.lastChild.src;
+    clone.addEventListener('click', () => {
+      zoomedImageUrl.value = clone.src;
     });
     el.addEventListener('click', () => {
       zoomedImageUrl.value = el.src;
@@ -74,10 +81,7 @@ const verticalLoop = (elements, config) => {
   // Animate
   tl.fromTo(elements[0].parentNode, {y: 0}, {
     y: `-=${totalHeight / 2}`, // Move half the total height (original + clones)
-    duration: config.duration || 30, // Use config duration or default
-    // modifiers: {
-    //   y: gsap.utils.unitize(y => parseFloat(y) % (totalHeight / 2)) // Wrap using modulo
-    // }
+    duration: config.duration || 20, // Adjusted default duration slightly
   });
 
   // Add hover interaction
@@ -91,20 +95,20 @@ const verticalLoop = (elements, config) => {
 };
 
 onMounted(async () => {
-  // Wait for DOM update after potential v-if/v-for rendering
-  await nextTick(); 
-  
-  columns.value = [col1.value, col2.value, col3.value, col4.value].filter(Boolean); // Filter out null refs (for hidden columns)
-  
+  await nextTick();
+  columns.value = [col1.value, col2.value, col3.value, col4.value].filter(Boolean);
+
   if (columns.value.length > 0) {
-    columns.value.forEach((col, _index) => {
-      const images = col.querySelectorAll('.gallery-image');
-      if(images.length > 0) {
-        // Use different speeds (durations)
-        const duration = gsap.utils.random(25, 40); // Random duration between 25 and 40 seconds
-        const tl = verticalLoop(images, { duration: duration });
-        timelines.value.push(tl); // Store the timeline
-      }
+    columns.value.forEach((col, index) => {
+       const images = col.querySelectorAll('.gallery-image');
+       if(images.length > 0) {
+         gsap.delayedCall(0.5 + index * 0.1, () => {
+           const duration = gsap.utils.random(15, 25);
+           console.log(`Starting loop for column ${index + 1} after delay.`);
+           const tl = verticalLoop(images, { duration: duration });
+           timelines.value.push(tl);
+         });
+       }
     });
   }
 });
@@ -118,7 +122,8 @@ onUnmounted(() => {
 
 <style scoped>
 .gallery-section {
-  min-height: 100vh; 
+  /* Limit height to viewport height */
+  height: 100vh; 
 }
 
 /* Ensure columns themselves don't overflow vertically initially */
