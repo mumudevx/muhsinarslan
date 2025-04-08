@@ -6,7 +6,10 @@
       <HeroSection ref="heroSectionRef" class="absolute inset-0 z-10" />
 
       <!-- About Section Container (initially hidden behind Hero) -->
-      <div ref="nextSection" class="absolute inset-0 z-0 overflow-hidden">
+      <div ref="nextSection" 
+           class="absolute inset-0 z-0 overflow-hidden flex items-center justify-center 
+                  bg-gradient-to-br from-primary-800 via-primary-900 to-primary-950">
+           <!-- Added background gradient classes -->
         <AboutSection />
       </div>
     </div>
