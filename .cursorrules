@@ -1,0 +1,21 @@
+# Project Intelligence for Muhsin Arslan's Personal Website
+
+## Development Workflow & Preferences
+
+*   **Framework:** Prioritize Nuxt.js for this project due to specified SEO requirements and modern features.
+*   **Styling:** Use Tailwind CSS exclusively for styling. Adhere strictly to the defined color palette and font guidelines.
+*   **Component Structure:** Develop all UI elements as Vue components. Maintain a clean and logical component hierarchy. Ensure development happens within the root directory structure as requested (avoid creating extra top-level folders for the Nuxt app itself if possible, let Nuxt create its standard structure).
+*   **Animations:** Implement animations using GSAP.
+*   **Language:** All user-facing content and comments (unless specifically requested otherwise) should be in English.
+*   **Memory Bank:** Keep the Memory Bank files (`memory-bank/`) updated with significant changes, decisions, and progress.
+
+## Design & Content Guidelines
+
+*   **Theme:** Dark Mode is mandatory, using the provided Primary (#21272fベース) and Accent (#33241fベース) color palettes.
+*   **Layout:** Follow the minimalist aesthetic with centered key elements as shown in the inspiration image.
+*   **Fonts:** Use Merriweather for headings and Montserrat for body/other text.
+*   **Responsiveness:** Ensure the website is fully responsive across common device sizes.
+
+## Deployment
+
+*   Target platform is GitHub Pages, utilizing Nuxt.js's Static Site Generation (SSG).
