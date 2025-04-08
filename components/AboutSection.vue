@@ -6,7 +6,7 @@
                 <!-- Text Content -->
                 <div class="text-content text-center md:text-left" ref="textContent">
                     <h2
-                        class="font-serif text-4xl md:text-5xl font-bold mb-4 
+                        class="font-serif text-6xl md:text-7xl font-bold mb-4 
                                text-transparent bg-clip-text bg-gradient-to-r from-accent-400 via-accent-500 to-accent-600">
                         About Me
                     </h2>
