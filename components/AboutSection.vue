@@ -16,6 +16,10 @@
                         background with a vision for identifying market gaps and building practical, user-centric SaaS
                         solutions to fill them.
                     </p>
+
+                    <p class="font-sans font-semibold text-base md:text-lg text-accent-500 leading-relaxed max-w-xl mx-auto md:mx-0 mt-4">
+                        There is no need to say too much. My best duo is; thinking and building.
+                    </p>
                 </div>
 
                 <!-- New Image Element with Glitch Effect Container -->

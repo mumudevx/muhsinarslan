@@ -1,42 +1,74 @@
 <template>
-  <section class="h-screen relative overflow-hidden flex flex-col items-center justify-center py-16 md:py-24">
+  <section ref="sectionRef" class="h-screen relative overflow-hidden flex flex-col items-center justify-center py-16 md:py-24">
     <!-- Background Video -->
     <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0">
       <source src="/videos/worksbg-video.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
-    
-    <!-- Video Overlay -->
-    <div class="absolute inset-0 bg-primary-950/70 z-10"></div> <!-- Increased overlay opacity slightly -->
-    
-    <!-- Content -->
-    <div class="relative z-20 flex flex-col items-center w-full"> <!-- Container for title and card -->
-      <div class="w-full max-w-3xl px-4"> 
-        <!-- Single Card -->
-        <div class="rounded-3xl p-6 md:p-8 relative shadow-lg flex flex-col bg-black/10 backdrop-blur-2xl border border-white/10"> 
-          
-          <!-- Background SVG Lines -->
-          <svg class="absolute top-0 left-0 w-full h-full opacity-[0.1] pointer-events-none" viewBox="0 0 300 400" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <path d="M-50 350 C 250 100, 150 300, 350 150" stroke="#FFFFFF" stroke-width="1"/> 
-          </svg>
 
-          <div class="relative z-10 flex flex-col flex-grow">
-            <div class="flex-grow px-2 md:px-4">
-              <h3 class="font-serif text-6xl md:text-7xl font-semibold mb-3 text-primary-50">Project Title 1</h3> 
-              <p class="font-sans text-base text-primary-100 mb-6 flex-grow">A complete process from discovery, branding, design, launch to post-launch optimization.</p>
-            </div>
-            <span class="self-end font-sans text-7xl md:text-8xl font-bold text-accent-300 mt-4 mr-2 md:mr-4">01</span> 
-          </div>
-        </div>
+    <!-- Video Overlay -->
+    <div class="absolute inset-0 bg-primary-950/70 z-10"></div>
+
+    <!-- Content -->
+    <div class="relative z-20 w-full overflow-x-hidden">
+      <div ref="worksContainerRef" class="flex flex-nowrap px-4 space-x-8 w-max">
+        <ProjectCard class="flex-shrink-0 w-[70vw] md:w-[50vw] lg:w-[35vw]" />
+        <ProjectCard class="flex-shrink-0 w-[70vw] md:w-[50vw] lg:w-[35vw]" />
+        <ProjectCard class="flex-shrink-0 w-[70vw] md:w-[50vw] lg:w-[35vw]" />
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
-// No script needed for this static component yet
+import { ref, onMounted, onUnmounted } from 'vue';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import ProjectCard from './ProjectCard.vue';
+
+gsap.registerPlugin(ScrollTrigger);
+
+const sectionRef = ref(null);
+const worksContainerRef = ref(null);
+let ctx;
+
+onMounted(() => {
+  setTimeout(() => {
+    if (!sectionRef.value || !worksContainerRef.value) return;
+
+    const works = worksContainerRef.value;
+    const section = sectionRef.value;
+
+    const scrollAmount = works.scrollWidth - section.clientWidth;
+
+    const amountToScroll = Math.max(0, scrollAmount);
+
+    ctx = gsap.context(() => {
+      gsap.to(works, {
+        x: -amountToScroll,
+        ease: "none",
+        scrollTrigger: {
+          trigger: section,
+          pin: true,
+          scrub: 1,
+          start: "top top",
+          end: () => `+=${amountToScroll}`,
+          invalidateOnRefresh: true
+        }
+      });
+    }, section);
+  }, 100);
+});
+
+onUnmounted(() => {
+  if (ctx) {
+    ctx.revert();
+  }
+});
 </script>
 
 <style scoped>
-/* Removed container style as it's handled by section flex now */
-</style> 
+.w-max {
+  width: max-content;
+}
+</style>
