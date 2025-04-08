@@ -1,29 +1,35 @@
 <template>
-  <div ref="transitionContainer">
-    <!-- Wrapper for pinning -->
-    <div class="relative h-screen">
-      <!-- Hero Section (will be pinned) - Added ref -->
-      <HeroSection ref="heroSectionRef" class="absolute inset-0 z-10" />
+  <div> <!-- Root element -->
+    <div ref="transitionContainer">
+      <!-- Wrapper for pinning -->
+      <div class="relative h-screen">
+        <!-- Hero Section (will be pinned) - Added ref -->
+        <HeroSection ref="heroSectionRef" class="absolute inset-0 z-10" />
 
-      <!-- About Section Container (initially hidden behind Hero) -->
-      <div ref="nextSection" 
-           class="absolute inset-0 z-0 overflow-hidden flex items-center justify-center 
-                  bg-gradient-to-br from-primary-800 via-primary-900 to-primary-950">
-           <!-- Added background gradient classes -->
-        <AboutSection />
+        <!-- About Section Container (initially hidden behind Hero) -->
+        <div ref="nextSection" 
+             class="absolute inset-0 z-0 overflow-hidden flex items-center justify-center 
+                    bg-gradient-to-br from-primary-800 via-primary-900 to-primary-950">
+             <!-- Added background gradient classes -->
+          <AboutSection />
+        </div>
       </div>
+
+      <!-- Reduced height temporary section to allow scrolling beyond pin -->
+      <!-- <div class="h-[50vh] bg-primary-800"></div> -->
+
     </div>
 
-    <!-- Reduced height temporary section to allow scrolling beyond pin -->
-    <!-- <div class="h-[50vh] bg-primary-800"></div> -->
-
-  </div>
+    <!-- Add MyWorksSection after the pinning container -->
+    <MyWorksSection />
+  </div> <!-- Close root element -->
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue';
 import HeroSection from '~/components/HeroSection.vue';
 import AboutSection from '~/components/AboutSection.vue'; // Import AboutSection
+import MyWorksSection from '~/components/MyWorksSection.vue'; // Import MyWorksSection
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
