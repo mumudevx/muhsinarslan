@@ -22,6 +22,9 @@
 
     <!-- Add MyWorksSection after the pinning container -->
     <MyWorksSection />
+
+    <!-- GallerySection (Yeni eklenen) -->
+    <GallerySection />
   </div> <!-- Close root element -->
 </template>
 
@@ -30,6 +33,7 @@ import { ref, onMounted } from 'vue';
 import HeroSection from '~/components/HeroSection.vue';
 import AboutSection from '~/components/AboutSection.vue'; // Import AboutSection
 import MyWorksSection from '~/components/MyWorksSection.vue'; // Import MyWorksSection
+import GallerySection from '~/components/GallerySection.vue'; // GallerySection'ı import et
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 

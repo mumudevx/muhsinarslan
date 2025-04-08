@@ -13,16 +13,18 @@
     *   Dark gradient background.
     *   Filtered placeholder image.
     *   Basic fade-in animations (text and image).
-*   `AboutSection` is integrated into `pages/index.vue`.
-*   Scroll-based transition animation between Hero and About sections is implemented.
+*   `components/MyWorksSection.vue` exists and is rendered.
+*   Sections are integrated into `pages/index.vue`.
+*   Scroll-based transition animation between sections is implemented.
 
 ## 2. What's Left to Build
 
-*   **Testing & Refinement:** Thorough testing of About section visuals, responsiveness, and animations.
-*   **Content:** Replacing placeholders in `AboutSection`.
+*   **`components/GallerySection.vue`:** Infinite scrolling image gallery.
+*   **Testing & Refinement:** Thorough testing of all sections visuals, responsiveness, and animations.
+*   **Content:** Replacing placeholders in `AboutSection` and other sections.
 *   **Image Effect (Optional):** Explore CSS `clip-path`/masking for a more accurate blocky cut-out effect if desired.
-*   **Other Pages:** Portfolio, Gallery, Blog, Contact pages.
-*   **Other Components:** Header, Footer, Navigation, Cards, etc.
+*   **Other Pages:** Blog, Contact pages (if needed).
+*   **Other Components:** Header, Footer, Navigation (if needed).
 *   **Full Content Integration:** Project data, blog posts, photos.
 *   **Advanced Animations:** Further GSAP enhancements.
 *   **Layout:** Defining the main layout in `layouts/default.vue`.
@@ -30,9 +32,9 @@
 
 ## 3. Current Status
 
-*   **Phase:** 1 - Core Section Implementation (Hero + About Refinement)
-*   **Overall Progress:** ~18% (Core sections refined, awaiting testing)
+*   **Phase:** 2 - Feature Section Implementation (`GallerySection`)
+*   **Overall Progress:** ~25% (Core sections done, starting gallery)
 
 ## 4. Known Issues
 
-*   None reported, but thorough testing of the refined About section is pending.
+*   None reported, but thorough testing of sections is pending.
