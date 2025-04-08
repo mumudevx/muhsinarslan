@@ -5,15 +5,14 @@
       <!-- Hero Section (will be pinned) - Added ref -->
       <HeroSection ref="heroSectionRef" class="absolute inset-0 z-10" />
 
-      <!-- Dummy section (initially hidden behind Hero) -->
-      <div ref="nextSection"
-           class="absolute inset-0 z-0 h-screen flex items-center justify-center bg-gradient-to-br from-accent-500 via-primary-500 to-accent-700 opacity-0 scale-90">
-        <h2 class="text-4xl font-bold text-white">Next Section Content Here</h2>
+      <!-- About Section Container (initially hidden behind Hero) -->
+      <div ref="nextSection" class="absolute inset-0 z-0 overflow-hidden">
+        <AboutSection />
       </div>
     </div>
 
     <!-- Reduced height temporary section to allow scrolling beyond pin -->
-    <div class="h-[50vh] bg-primary-800"></div>
+    <!-- <div class="h-[50vh] bg-primary-800"></div> -->
 
   </div>
 </template>
@@ -21,6 +20,7 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import HeroSection from '~/components/HeroSection.vue';
+import AboutSection from '~/components/AboutSection.vue'; // Import AboutSection
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -47,6 +47,9 @@ onMounted(() => {
       return;
     }
 
+    // Initialize the state for the animation (start hidden)
+    gsap.set(nextSection.value, { opacity: 0, scale: 0.9 });
+
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: transitionContainer.value,
@@ -72,7 +75,7 @@ onMounted(() => {
       duration: 0.3 // Adjust duration for desired fade speed
     }, 0.1); // Start slightly after time 0 (e.g., 0.1 seconds into the timeline)
 
-    // Animate Next Section in (fade and scale up)
+    // Animate Next Section container in (fade and scale up)
     tl.to(nextSection.value, {
       opacity: 1,
       scale: 1,
@@ -80,4 +83,4 @@ onMounted(() => {
     }, "<75%");
   }, 0); // Use setTimeout with 0 delay (next tick)
 });
-</script> 
+</script>

@@ -11,7 +11,7 @@
 
 ## Design & Content Guidelines
 
-*   **Theme:** Dark Mode is mandatory, using the provided Primary (#21272fベース) and Accent (#33241fベース) color palettes.
+*   **Theme:** Dark Mode is mandatory, using the provided Primary (#21272f) and Accent (#33241f) color palettes.
 *   **Layout:** Follow the minimalist aesthetic with centered key elements as shown in the inspiration image.
 *   **Fonts:** Use Merriweather for headings and Montserrat for body/other text.
 *   **Responsiveness:** Ensure the website is fully responsive across common device sizes.

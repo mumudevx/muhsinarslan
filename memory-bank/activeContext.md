@@ -1,28 +1,32 @@
-# Active Context: Personal Website (Initialization)
+# Active Context: Personal Website (Hero + About Section Refinement)
 
 ## 1. Current Focus
 
-*   Project setup and initial configuration.
-*   Establishing the basic Nuxt.js project structure.
-*   Integrating Tailwind CSS.
-*   Defining the primary and accent color palettes in Tailwind configuration.
-*   Setting up the specified fonts (Merriweather, Montserrat).
+*   Testing the refined About section layout, background, and new image filter effect.
+*   Verifying the scroll transition and internal animations work correctly with the updated structure.
 
 ## 2. Recent Changes
 
-*   Memory Bank files created and populated with initial project details.
-*   `.cursorrules` file created with initial guidelines.
+*   **AboutSection Component Update:**
+    *   Centered text content on smaller screens, left-aligned on larger screens.
+    *   Removed the bottom background image section.
+    *   Applied a dark gradient background (`primary` shades) to the entire section.
+    *   Removed the split-circle visual element.
+    *   Added a new placeholder image (Picsum) to the right column.
+    *   Applied Tailwind filters (`grayscale`, `contrast`, `brightness`) and blend modes (`mix-blend-multiply`, `mix-blend-overlay`) to the new image to approximate the reference style.
+    *   Updated GSAP `onMounted` animations to target the new image container instead of the circle.
+*   No changes made to `pages/index.vue` in this step, as the `AboutSection` component is self-contained regarding these visual updates.
 
 ## 3. Next Steps
 
-*   Install Nuxt.js and necessary dependencies (Tailwind CSS, GSAP, Pinia).
-*   Configure Tailwind CSS, including custom colors and fonts.
-*   Create the basic layout structure (`layouts/default.vue`).
-*   Develop the initial `pages/index.vue` with a basic Hero section placeholder.
-*   Set up the development server and verify the initial setup.
+*   Run the development server (`npm run dev` or similar).
+*   Test the visual appearance of the updated About section, paying attention to the image filter and gradient background.
+*   Test the responsiveness of the new layout.
+*   Verify scroll and internal animations are functioning as expected.
+*   Consider fine-tuning the image filters or trying CSS `clip-path` / masking if a closer match to the reference image's blocky cut-out effect is desired later.
+*   Replace placeholder content (text and image URL) when available.
 
 ## 4. Active Decisions & Considerations
 
-*   Confirming Nuxt.js as the chosen framework.
-*   Ensuring Tailwind CSS is correctly configured with the provided theme details.
-*   Planning the initial component structure for core elements (Header, Footer, Hero).
+*   Using Tailwind filters and blend modes for the image effect as a first pass.
+*   The section now uses a gradient background instead of a bottom image.
