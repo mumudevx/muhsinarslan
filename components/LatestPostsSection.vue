@@ -31,7 +31,7 @@
 const posts = await queryCollection('blog')
   .select('title', 'coverImage', 'publishDate', 'slug') // Fetch only needed fields
   .order("publishDate", "DESC")
-  .limit(8)
+  .limit(5)
   .all()
 
 // Function to determine grid span based on index (example bento layout)
