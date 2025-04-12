@@ -19,7 +19,7 @@ let moveTimeout = null;
 
 // State for visibility conditions
 const isAtBottom = ref(false);
-const isOverProjectCard = ref(false);
+const isOverLink = ref(false);
 
 // Check if the current route is the homepage
 const isOnHomepage = computed(() => route.path === '/');
@@ -28,13 +28,13 @@ const isOnHomepage = computed(() => route.path === '/');
 const shouldShowScrollMessage = computed(() => 
   isOnHomepage.value && 
   !isAtBottom.value && 
-  !isOverProjectCard.value
+  !isOverLink.value
 );
 
 const onMouseMove = (event) => {
-  // Check if over a project card
+  // Check if over a link element
   const elementUnderCursor = document.elementFromPoint(event.clientX, event.clientY);
-  isOverProjectCard.value = !!elementUnderCursor?.closest('[data-project-card="true"]');
+  isOverLink.value = !!elementUnderCursor?.closest('a');
 
   if (!follower.value || !shouldShowScrollMessage.value) {
     gsap.to(follower.value, { opacity: 0, scale: 0, duration: 0 });

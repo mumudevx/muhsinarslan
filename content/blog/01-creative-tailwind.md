@@ -1,9 +1,26 @@
 ---
 id: 1
-title: 'Creative Tailwind'
-coverImage: 'https://picsum.photos/seed/post1/600/400'
+title: "Creative Tailwind"
+coverImage: "https://picsum.photos/seed/post1/600/400"
 publishDate: 2024-07-26
 slug: creative-tailwind
 ---
 
-Creative tailwind blog post content...
+## Sub Title
+
+Demo blog post 2 content is here...
+
+## Another Title
+
+**Another content.**
+
+## TODO List Maybe
+
+- [x] A
+- [ ] B
+- [x] C
+
+### Normal List
+
+- Deneme
+- Deneme 2

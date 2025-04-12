@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink :to="`/work/${slug}`" class="block rounded-3xl relative shadow-lg group" data-project-card="true" @mouseenter="onMouseEnter" @mouseleave="onMouseLeave" @mousemove="onMouseMove">
+  <NuxtLink :to="`/work/${slug}`" class="block rounded-3xl relative shadow-lg group" @mouseenter="onMouseEnter" @mouseleave="onMouseLeave" @mousemove="onMouseMove">
     <div
       class="project-card rounded-3xl p-6 md:p-8 relative overflow-hidden bg-black/10 backdrop-blur-2xl border border-white/10 h-full flex flex-col">
       <!-- Background SVG Lines -->
