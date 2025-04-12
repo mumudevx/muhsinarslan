@@ -8,8 +8,8 @@
       <slot /> <!-- Page content will be injected here -->
     </main>
 
-    <!-- Footer Placeholder (To be implemented later) -->
-    <!-- <TheFooter /> -->
+    <!-- Footer Implementation -->
+    <TheFooter />
   </div>
 </template>
 
@@ -17,6 +17,7 @@
 // Import TheHeader component
 import TheHeader from '~/components/TheHeader.vue';
 import CursorFollower from '~/components/CursorFollower.vue';
+import TheFooter from '~/components/TheFooter.vue';
 </script>
 
 <style scoped>
