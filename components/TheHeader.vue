@@ -10,7 +10,7 @@
       <nav class="space-x-6">
         <NuxtLink to="/work" class="text-primary-200 hover:text-accent-400 font-sans text-sm uppercase tracking-wider">Work</NuxtLink>
         <NuxtLink to="/blog" class="text-primary-200 hover:text-accent-400 font-sans text-sm uppercase tracking-wider">Blog</NuxtLink>
-        <NuxtLink to="#connect" class="text-primary-200 hover:text-accent-400 font-sans text-sm uppercase tracking-wider">Let's connect</NuxtLink>
+        <NuxtLink to="/contact" class="text-primary-200 hover:text-accent-400 font-sans text-sm uppercase tracking-wider">Let's connect</NuxtLink>
       </nav>
     </div>
   </header>

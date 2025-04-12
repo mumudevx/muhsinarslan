@@ -29,9 +29,6 @@
     <!-- LatestPostsSection (Yeni eklenen) -->
     <LatestPostsSection />
 
-    <!-- ConnectSection (Yeni eklenen) -->
-    <ConnectSection />
-
   </div> <!-- Close root element -->
 </template>
 
@@ -42,7 +39,6 @@ import AboutSection from '~/components/AboutSection.vue'; // Import AboutSection
 import MyWorksSection from '~/components/MyWorksSection.vue'; // Import MyWorksSection
 import GallerySection from '~/components/GallerySection.vue'; // GallerySection'ı import et
 import LatestPostsSection from '~/components/LatestPostsSection.vue'; // LatestPostsSection'ı import et
-import ConnectSection from '~/components/ConnectSection.vue'; // ConnectSection'ı import et
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
