@@ -8,6 +8,8 @@ export default defineContentConfig({
       schema: z.object({
         title: z.string(),
         description: z.string(),
+        coverImage: z.string(),
+        slug: z.string(),
       }),
     }),
     blog: defineCollection({

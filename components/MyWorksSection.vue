@@ -13,7 +13,15 @@
     <!-- Content -->
     <div class="relative z-20 w-full overflow-x-hidden">
       <div ref="worksContainerRef" class="flex flex-nowrap px-16 space-x-8 w-max">
-        <ProjectCard v-for="(project, index) in top3Works" :key="project._path" :title="project.title" :description="project.description" :index="index" class="flex-shrink-0 w-[85vw] md:w-[65vw] lg:w-[45vw]" />
+        <ProjectCard 
+          v-for="(project, index) in top3Works" 
+          :key="project._path" 
+          :title="project.title" 
+          :description="project.description" 
+          :index="index" 
+          :slug="project.slug"  
+          class="flex-shrink-0 w-[85vw] md:w-[65vw] lg:w-[45vw]" 
+        />
       </div>
     </div>
   </section>

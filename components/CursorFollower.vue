@@ -19,17 +19,25 @@ let moveTimeout = null;
 
 // State for visibility conditions
 const isAtBottom = ref(false);
+const isOverProjectCard = ref(false);
 
 // Check if the current route is the homepage
 const isOnHomepage = computed(() => route.path === '/');
 
 // Computed property to determine if the message should be shown
-const shouldShowScrollMessage = computed(() => isOnHomepage.value && !isAtBottom.value);
+const shouldShowScrollMessage = computed(() => 
+  isOnHomepage.value && 
+  !isAtBottom.value && 
+  !isOverProjectCard.value
+);
 
 const onMouseMove = (event) => {
-  if (!follower.value || !shouldShowScrollMessage.value) { // Only move if visible
-    // Hide immediately if conditions are not met
-    gsap.to(follower.value, { opacity: 0, scale: 0, duration: 0 }); 
+  // Check if over a project card
+  const elementUnderCursor = document.elementFromPoint(event.clientX, event.clientY);
+  isOverProjectCard.value = !!elementUnderCursor?.closest('[data-project-card="true"]');
+
+  if (!follower.value || !shouldShowScrollMessage.value) {
+    gsap.to(follower.value, { opacity: 0, scale: 0, duration: 0 });
     return;
   }
 
@@ -56,7 +64,7 @@ const onMouseMove = (event) => {
 
   // Set timeout to hide after inactivity
   moveTimeout = setTimeout(() => {
-    if (follower.value) { // Check if follower still exists
+    if (follower.value) {
       gsap.to(follower.value, {
         opacity: 0,
         scale: 0,
