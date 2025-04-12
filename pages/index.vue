@@ -25,6 +25,10 @@
 
     <!-- GallerySection (Yeni eklenen) -->
     <GallerySection />
+
+    <!-- LatestPostsSection (Yeni eklenen) -->
+    <LatestPostsSection />
+
   </div> <!-- Close root element -->
 </template>
 
@@ -34,6 +38,7 @@ import HeroSection from '~/components/HeroSection.vue';
 import AboutSection from '~/components/AboutSection.vue'; // Import AboutSection
 import MyWorksSection from '~/components/MyWorksSection.vue'; // Import MyWorksSection
 import GallerySection from '~/components/GallerySection.vue'; // GallerySection'ı import et
+import LatestPostsSection from '~/components/LatestPostsSection.vue'; // LatestPostsSection'ı import et
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 

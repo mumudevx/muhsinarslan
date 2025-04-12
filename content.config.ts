@@ -10,5 +10,15 @@ export default defineContentConfig({
         description: z.string(),
       }),
     }),
+    blog: defineCollection({
+      type: "page",
+      source: "blog/*.md",
+      schema: z.object({
+        title: z.string(),
+        coverImage: z.string(),
+        publishDate: z.string(),
+        slug: z.string(),
+      }),
+    }),
   },
 });

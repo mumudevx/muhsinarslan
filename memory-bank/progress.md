@@ -14,16 +14,17 @@
     *   Filtered placeholder image.
     *   Basic fade-in animations (text and image).
 *   `components/MyWorksSection.vue` exists and is rendered.
+*   `components/GallerySection.vue` created with infinite scroll animation and image zoom.
 *   Sections are integrated into `pages/index.vue`.
 *   Scroll-based transition animation between sections is implemented.
 
 ## 2. What's Left to Build
 
-*   **`components/GallerySection.vue`:** Infinite scrolling image gallery.
-*   **Testing & Refinement:** Thorough testing of all sections visuals, responsiveness, and animations.
-*   **Content:** Replacing placeholders in `AboutSection` and other sections.
-*   **Image Effect (Optional):** Explore CSS `clip-path`/masking for a more accurate blocky cut-out effect if desired.
-*   **Other Pages:** Blog, Contact pages (if needed).
+*   **`components/LatestPostsSection.vue`:** Bento grid layout for recent blog posts.
+*   **Testing & Refinement:** Thorough testing of all sections visuals, responsiveness, and animations (especially Gallery responsiveness/height calculation robustness).
+*   **Content:** Replacing placeholders in all sections (About, Gallery images, Blog posts).
+*   **Image Effect (Optional):** Explore CSS `clip-path`/masking for `AboutSection` image.
+*   **Other Pages:** Blog (listing/detail), Contact pages (if needed).
 *   **Other Components:** Header, Footer, Navigation (if needed).
 *   **Full Content Integration:** Project data, blog posts, photos.
 *   **Advanced Animations:** Further GSAP enhancements.
@@ -32,9 +33,9 @@
 
 ## 3. Current Status
 
-*   **Phase:** 2 - Feature Section Implementation (`GallerySection`)
-*   **Overall Progress:** ~25% (Core sections done, starting gallery)
+*   **Phase:** 3 - Feature Section Implementation (`LatestPostsSection`)
+*   **Overall Progress:** ~35% (Gallery done, starting blog section)
 
 ## 4. Known Issues
 
-*   None reported, but thorough testing of sections is pending.
+*   Gallery section's height calculation (`verticalLoop`) might still need refinement depending on image loading variability. Thorough testing needed.
