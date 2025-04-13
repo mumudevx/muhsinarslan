@@ -1,10 +1,10 @@
 <template>
-  <div class="min-h-screen flex flex-col relative">
+  <div class="min-h-screen flex flex-col relative bg-primary-950">
     <!-- Import and use TheHeader component -->
     <TheHeader />
     <CursorFollower />
 
-    <main class="flex-grow">
+    <main class="flex-grow overflow-y-auto">
       <slot /> <!-- Page content will be injected here -->
     </main>
 
@@ -53,4 +53,12 @@ html {
 
 <style scoped>
 /* Scoped styles for the default layout if needed */
+/* Optional: If you want to hide the scrollbar specifically on main, but keep functionality */
+/* main::-webkit-scrollbar {
+  display: none;
+} */
+/* main {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
+} */
 </style> 
