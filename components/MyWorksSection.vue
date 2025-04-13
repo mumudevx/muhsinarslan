@@ -19,7 +19,8 @@
           :title="project.title" 
           :description="project.description" 
           :index="index" 
-          :slug="project.slug"  
+          :slug="project.slug" 
+          :enableFollower="false" 
           class="flex-shrink-0 w-[85vw] md:w-[65vw] lg:w-[45vw]" 
         />
       </div>
