@@ -24,7 +24,7 @@
     <MyWorksSection />
 
     <!-- GallerySection (Yeni eklenen) -->
-    <GallerySection />
+    <!-- <GallerySection /> -->
 
     <!-- LatestPostsSection (Yeni eklenen) -->
     <LatestPostsSection />
