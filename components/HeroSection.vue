@@ -18,7 +18,7 @@
     </div>
 
     <!-- Main Headline -->
-    <h1 ref="headline" class="font-serif text-8xl font-bold text-primary-50 max-w-4xl z-10">
+    <h1 ref="headline" class="font-serif text-5xl md:text-9xl font-bold text-primary-50 max-w-4xl z-10">
       Indie SaaS Developer
       <!-- Was: An indie SaaS developer helping businesses grow. -->
     </h1>

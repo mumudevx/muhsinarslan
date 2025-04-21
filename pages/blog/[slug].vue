@@ -2,7 +2,8 @@
   <main class="py-32 px-4 sm:px-8 lg:px-16 bg-primary-950 min-h-screen text-white">
     <article v-if="post">
       <header class="mb-12 text-center">
-        <h1 class="text-4xl md:text-5xl font-bold font-merriweather mb-4 text-accent-500">{{ post.title }}</h1>
+        <h1 class="text-4xl md:text-5xl font-bold font-merriweather mb-4 text-accent-500 max-w-4xl mx-auto">{{
+          post.title }}</h1>
         <p v-if="post.publishDate" class="text-gray-400 text-sm font-montserrat">
           Published on: {{ formatDate(post.publishDate) }}
         </p>
