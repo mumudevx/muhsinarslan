@@ -32,7 +32,7 @@ jobs:
       - name: Static Generation
         run: npm run generate # pnpm yerine npm run generate kullanılıyor
         env:
-          NUXT_APP_BASE_URL: /muhsinarslan/ # Senin repo adının bu olduğundan emin ol
+          NUXT_APP_BASE_URL: /
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
