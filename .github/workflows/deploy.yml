@@ -3,7 +3,7 @@ name: Deploy Nuxt site to Pages
 on:
   push:
     branches:
-      - main # Veya senin varsayılan branch'in adı neyse (örn: master)
+      - main
   workflow_dispatch: {}
 
 permissions:
@@ -21,16 +21,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      # pnpm kurulum adımı kaldırıldı
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "20" # Projenle uyumlu Node.js versiyonunu seçebilirsin
-          cache: npm # pnpm yerine npm kullanılıyor
+          node-version: "20"
+          cache: npm
       - name: Install dependencies
-        run: npm ci # pnpm yerine npm ci kullanılıyor (package-lock.json gerektirir)
+        run: npm ci
       - name: Static Generation
-        run: npm run generate # pnpm yerine npm run generate kullanılıyor
+        run: npm run generate
         env:
           NUXT_APP_BASE_URL: /
       - name: Upload artifact
