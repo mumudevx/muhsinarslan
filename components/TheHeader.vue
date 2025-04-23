@@ -1,5 +1,5 @@
 <template>
-  <header class="top-0 left-0 right-0 p-8 z-10">
+  <header :class="['top-0', 'left-0', 'right-0', 'p-8', 'z-10', { 'absolute': route.path === '/' }]">
     <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
       <!-- Left: Name -->
       <div class="text-primary-100 font-sans text-lg font-semibold">
@@ -17,7 +17,9 @@
 </template>
 
 <script setup>
-// No script needed for this simple static header yet
+import { useRoute } from 'vue-router';
+
+const route = useRoute();
 </script>
 
 <style scoped>
