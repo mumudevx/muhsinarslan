@@ -31,6 +31,7 @@
 const posts = await queryCollection('blog')
   .select('title', 'coverImage', 'publishDate', 'slug') // Fetch only needed fields
   .order("publishDate", "DESC")
+  .order('id', 'DESC')
   .limit(5)
   .all()
 

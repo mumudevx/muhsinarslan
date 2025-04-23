@@ -5,8 +5,7 @@
     <div>
       <label for="contact-name" class="block text-sm font-medium text-primary-300 mb-1 font-montserrat">Name</label>
       <input type="text" id="contact-name" v-model="formData.name"
-        :class="{ 'border-red-500 focus:ring-red-500': errors.name }"
-        :disabled="isSubmitting"
+        :class="{ 'border-red-500 focus:ring-red-500': errors.name }" :disabled="isSubmitting"
         class="w-full px-4 py-3 rounded-md bg-primary-800 border border-primary-700 text-primary-100 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-transparent placeholder-primary-500 transition duration-200 disabled:opacity-70"
         placeholder="Your Name">
       <p v-if="errors.name" class="mt-1 text-red-500 text-xs font-montserrat">{{ errors.name }}</p>
@@ -15,18 +14,17 @@
     <div>
       <label for="contact-email" class="block text-sm font-medium text-primary-300 mb-1 font-montserrat">Email</label>
       <input type="email" id="contact-email" v-model="formData.email"
-        :class="{ 'border-red-500 focus:ring-red-500': errors.email }"
-        :disabled="isSubmitting"
+        :class="{ 'border-red-500 focus:ring-red-500': errors.email }" :disabled="isSubmitting"
         class="w-full px-4 py-3 rounded-md bg-primary-800 border border-primary-700 text-primary-100 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-transparent placeholder-primary-500 transition duration-200 disabled:opacity-70"
         placeholder="your.email@example.com">
       <p v-if="errors.email" class="mt-1 text-red-500 text-xs font-montserrat">{{ errors.email }}</p>
     </div>
     <!-- Message Field -->
     <div>
-      <label for="contact-message" class="block text-sm font-medium text-primary-300 mb-1 font-montserrat">Message</label>
+      <label for="contact-message"
+        class="block text-sm font-medium text-primary-300 mb-1 font-montserrat">Message</label>
       <textarea id="contact-message" rows="5" v-model="formData.message"
-        :class="{ 'border-red-500 focus:ring-red-500': errors.message }"
-        :disabled="isSubmitting"
+        :class="{ 'border-red-500 focus:ring-red-500': errors.message }" :disabled="isSubmitting"
         class="w-full px-4 py-3 rounded-md bg-primary-800 border border-primary-700 text-primary-100 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-transparent placeholder-primary-500 transition duration-200 resize-none disabled:opacity-70"
         placeholder="How can I help?"></textarea>
       <p v-if="errors.message" class="mt-1 text-red-500 text-xs font-montserrat">{{ errors.message }}</p>
@@ -91,8 +89,7 @@ const validateForm = () => {
 
 const handleSubmit = async () => {
   if (!validateForm()) {
-    console.log('Form validation failed', errors.value);
-    return; // Stop if validation fails
+    return;
   }
 
   isSubmitting.value = true;
@@ -112,9 +109,9 @@ const handleSubmit = async () => {
     if (response.ok) {
       submissionStatus.value = 'success';
       submissionMessage.value = 'Thank you for your message! I will get back to you soon.';
-      console.log('Form submitted successfully to Formspree');
+
       formData.value = { name: '', email: '', message: '' };
-      errors.value = {}; // Clear errors on success
+      errors.value = {};
     } else {
       let errorData = { message: "Submission failed. Please try again." };
       try {
@@ -152,4 +149,4 @@ const handleSubmit = async () => {
 .focus\:ring-red-500:focus {
   --tw-ring-color: #ef4444;
 }
-</style> 
+</style>

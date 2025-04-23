@@ -35,7 +35,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ProjectCard from './ProjectCard.vue';
 
 const top3Works = await queryCollection('works').limit(3).all()
-console.log(top3Works)
 
 gsap.registerPlugin(ScrollTrigger);
 

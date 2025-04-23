@@ -101,8 +101,7 @@ const validateForm = () => {
 
 const handleSubmit = async () => {
     if (!validateForm()) {
-        console.log('Form validation failed', errors.value);
-        return; // Stop if validation fails
+        return;
     }
 
     isSubmitting.value = true;
@@ -120,11 +119,9 @@ const handleSubmit = async () => {
         });
 
         if (response.ok) {
-            // Success
             submissionStatus.value = 'success';
             submissionMessage.value = 'Thank you for your message! I will get back to you soon.';
-            console.log('Form submitted successfully to Formspree');
-            // Reset form
+
             formData.value = { name: '', email: '', message: '' };
             errors.value = {}; // Clear errors on success
         } else {
