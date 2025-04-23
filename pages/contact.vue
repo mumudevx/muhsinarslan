@@ -1,5 +1,5 @@
 <template>
-  <main class="py-32 px-4 sm:px-8 lg:px-16 bg-primary-950 text-white flex flex-col items-center">
+  <main class="py-16 px-8 bg-primary-950 text-white flex flex-col items-center">
     <header class="max-w-4xl mx-auto text-center mb-16">
       <h1 class="text-4xl md:text-5xl font-bold font-merriweather mb-6 text-accent-500">Let's Create Something Together</h1>
       <p class="text-lg text-primary-200 font-montserrat">

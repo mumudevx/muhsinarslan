@@ -1,6 +1,6 @@
 <template>
     <section
-        class="relative py-16 md:py-24 overflow-hidden text-primary-100">
+        class="relative overflow-hidden text-primary-100">
         <div class="container mx-auto px-4 relative z-10">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <!-- Text Content -->

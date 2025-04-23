@@ -1,6 +1,6 @@
 <template>
   <section
-    class="min-h-screen flex flex-col justify-center items-center text-center px-4 pt-24 pb-12 relative overflow-hidden">
+    class="min-h-screen flex flex-col justify-center items-center text-center relative overflow-hidden">
     <!-- Optional: Scroll Down Text -->
     <!-- <div class="absolute top-1/2 left-8 transform -translate-y-1/2 -rotate-90 origin-bottom-left">
       <span class="text-primary-300 font-sans text-xs uppercase tracking-widest">

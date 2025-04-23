@@ -1,5 +1,5 @@
 <template>
-  <main class="py-32 px-4 sm:px-8 lg:px-16 bg-primary-950 min-h-screen text-white">
+  <main class="py-16 px-8 bg-primary-950 min-h-screen text-white">
     <h1 class="text-4xl md:text-5xl font-bold font-merriweather text-center mb-16 text-accent-500">All Blog Posts</h1>
 
     <div v-if="displayedPosts && displayedPosts.length"

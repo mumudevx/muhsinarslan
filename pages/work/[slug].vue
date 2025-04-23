@@ -1,5 +1,5 @@
 <template>
-    <main class="py-32 px-4 sm:px-8 lg:px-16 bg-primary-950 min-h-screen text-white">
+    <main class="py-16 px-8 bg-primary-950 min-h-screen text-white">
         <article v-if="work">
             <header class="mb-12 text-center">
                 <h1 class="text-4xl md:text-5xl font-bold font-merriweather mb-4 text-accent-500">{{ work.title }}</h1>
