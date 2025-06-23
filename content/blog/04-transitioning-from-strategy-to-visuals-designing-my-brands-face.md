@@ -8,7 +8,7 @@ slug: transitioning-from-strategy-to-visuals-designing-my-brands-face
 
 In my previous post, I discussed the importance of understanding myself and my target audience, then bringing all these pieces together to create a cohesive brand story. Now, the question arose of how to visually support this story for a brand with a soul and a narrative. This step involves designing the brand's digital face—its **visual identity**.
 
-For me, visual identity is not merely an aesthetic choice; it's a strategic tool for appearing **professional**, increasing my **recognizability**, and visually expressing my brand's personality. Especially as a "SaaS builder" and "indie developer," I believe that having a consistent and appealing visual language for the products I develop and my digital presence will directly impact the **user experience**.
+For me, visual identity is not merely an aesthetic choice; it's a strategic tool for appearing **professional**, increasing my **recognizability**, and visually expressing my brand's personality. Especially as a "Indie SaaS" I believe that having a consistent and appealing visual language for the products I develop and my digital presence will directly impact the **user experience**.
 
 ---
 
